@@ -44,7 +44,7 @@ namespace lab2SH
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.Location = new System.Drawing.Point(186, 42);
+            this.label1.Location = new System.Drawing.Point(195, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 24);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@ namespace lab2SH
             // 
             this.CheckBox.AutoSize = true;
             this.CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.CheckBox.Location = new System.Drawing.Point(360, 304);
+            this.CheckBox.Location = new System.Drawing.Point(246, 292);
             this.CheckBox.Name = "CheckBox";
             this.CheckBox.Size = new System.Drawing.Size(119, 28);
             this.CheckBox.TabIndex = 1;
@@ -64,10 +64,11 @@ namespace lab2SH
             // 
             // button1
             // 
+            this.button1.AutoSize = true;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(168, 182);
+            this.button1.Location = new System.Drawing.Point(54, 170);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(481, 23);
+            this.button1.Size = new System.Drawing.Size(481, 27);
             this.button1.TabIndex = 2;
             this.button1.Text = "Рассчитать";
             this.button1.UseVisualStyleBackColor = true;
@@ -77,7 +78,7 @@ namespace lab2SH
             // 
             this.RadioButton1.AutoSize = true;
             this.RadioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RadioButton1.Location = new System.Drawing.Point(168, 252);
+            this.RadioButton1.Location = new System.Drawing.Point(54, 240);
             this.RadioButton1.Name = "RadioButton1";
             this.RadioButton1.Size = new System.Drawing.Size(95, 28);
             this.RadioButton1.TabIndex = 3;
@@ -90,7 +91,7 @@ namespace lab2SH
             // 
             this.RadioButton2.AutoSize = true;
             this.RadioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RadioButton2.Location = new System.Drawing.Point(369, 252);
+            this.RadioButton2.Location = new System.Drawing.Point(255, 240);
             this.RadioButton2.Name = "RadioButton2";
             this.RadioButton2.Size = new System.Drawing.Size(95, 28);
             this.RadioButton2.TabIndex = 4;
@@ -103,7 +104,7 @@ namespace lab2SH
             // 
             this.RadioButton3.AutoSize = true;
             this.RadioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.RadioButton3.Location = new System.Drawing.Point(575, 252);
+            this.RadioButton3.Location = new System.Drawing.Point(461, 240);
             this.RadioButton3.Name = "RadioButton3";
             this.RadioButton3.Size = new System.Drawing.Size(78, 28);
             this.RadioButton3.TabIndex = 5;
@@ -115,7 +116,7 @@ namespace lab2SH
             // textField1
             // 
             this.textField1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textField1.Location = new System.Drawing.Point(168, 119);
+            this.textField1.Location = new System.Drawing.Point(54, 107);
             this.textField1.Name = "textField1";
             this.textField1.Size = new System.Drawing.Size(481, 29);
             this.textField1.TabIndex = 6;
@@ -124,7 +125,7 @@ namespace lab2SH
             // 
             this.label.AutoSize = true;
             this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label.Location = new System.Drawing.Point(324, 394);
+            this.label.Location = new System.Drawing.Point(210, 382);
             this.label.Name = "label";
             this.label.Size = new System.Drawing.Size(0, 24);
             this.label.TabIndex = 7;
@@ -133,7 +134,7 @@ namespace lab2SH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(599, 415);
             this.Controls.Add(this.label);
             this.Controls.Add(this.textField1);
             this.Controls.Add(this.RadioButton3);
@@ -144,10 +145,10 @@ namespace lab2SH
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
-
-           
 
         }
 

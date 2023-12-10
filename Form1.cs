@@ -14,6 +14,15 @@ namespace lab2SH
 {
     public partial class Form1 : Form
     {
+        private Rectangle headerOriginalRectangle;
+        private Rectangle checkBoxOriginalRectangle;
+        private Rectangle inputOriginalRectangle;
+        private Rectangle r1OriginalRectangle;
+        private Rectangle r2OriginalRectangle;
+        private Rectangle r3OriginalRectangle;
+        private Rectangle buttonOriginalRectangle;
+        private Rectangle labelOriginalRectangle;
+        private Rectangle originalFormSize;
         public static bool isNumeric(String str)
         {
             
@@ -79,24 +88,18 @@ namespace lab2SH
             }
             catch (Exception ex)
             {
-               
                 label.Text = "Некорректные данные";
                 RadioButton1.Checked = false;
                 RadioButton2.Checked = false;
                 RadioButton3.Checked = false;
-                
             }
         }
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
+        public Form1(){
+            InitializeComponent();}
         private void button1_Click(object sender, EventArgs e)
         {
             Calculate(0);
         }
-
         private void CheckBox_CheckedChanged(object sender, EventArgs e)
         {
             int choice = 0;
@@ -105,7 +108,6 @@ namespace lab2SH
             if (RadioButton3.Checked) choice = 3;
             Calculate(choice);
         }
-
         private void RadioButton2_CheckedChanged(object sender, EventArgs e)
         {
             int choice = 0;
@@ -115,6 +117,46 @@ namespace lab2SH
             if(sender.Equals(RadioButton3)) choice = 3;
 
             Calculate(choice);
+        }
+        private void resizeControl(Rectangle r, Control c)
+        {
+            float xRatio = (float)(this.Width) / (float)(originalFormSize.Width);
+            float yRatio = (float)(this.Height) / (float)(originalFormSize.Height);
+
+            int newX = (int)(r.Location.X * xRatio);
+            int newY = (int)(r.Location.Y * yRatio);
+
+            int newWidth = (int)(r.Width * xRatio);
+            int newHeight = (int)(r.Height * yRatio);
+
+            c.Location = new Point(newX, newY);
+            c.Size = new Size(newWidth, newHeight);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            originalFormSize = new Rectangle(this.Location.X, this.Location.Y, this.Size.Width, this.Size.Height);
+            buttonOriginalRectangle = new Rectangle(button1.Location.X, button1.Location.Y, button1.Width, button1.Height);
+            headerOriginalRectangle = new Rectangle(label1.Location.X, label1.Location.Y, label1.Width, label1.Height);
+            checkBoxOriginalRectangle = new Rectangle(CheckBox.Location.X, CheckBox.Location.Y, CheckBox.Width, CheckBox.Height);
+            inputOriginalRectangle = new Rectangle(textField1.Location.X, textField1.Location.Y, textField1.Width, textField1.Height); 
+            r1OriginalRectangle = new Rectangle(RadioButton1.Location.X, RadioButton1.Location.Y, RadioButton1.Width, RadioButton1.Height);
+            r2OriginalRectangle = new Rectangle(RadioButton2.Location.X, RadioButton2.Location.Y, RadioButton2.Width, RadioButton2.Height);
+            r3OriginalRectangle = new Rectangle(RadioButton3.Location.X, RadioButton3.Location.Y, RadioButton3.Width, RadioButton3.Height);
+            labelOriginalRectangle = new Rectangle(label.Location.X, label.Location.Y, label.Width, label.Height);
+
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            resizeControl(buttonOriginalRectangle, button1);
+            resizeControl(headerOriginalRectangle, label1);
+            resizeControl(checkBoxOriginalRectangle, CheckBox);
+            resizeControl(inputOriginalRectangle, textField1);
+            resizeControl(r1OriginalRectangle, RadioButton1);
+            resizeControl(r2OriginalRectangle, RadioButton2);
+            resizeControl(r3OriginalRectangle, RadioButton3);
+            resizeControl(labelOriginalRectangle, label);
         }
     }
 
